@@ -1,0 +1,23 @@
+body{
+    margin: 0;
+    padding: 0;
+    transition: all 1.5s ease;
+    color: #000;
+    font-size: 18px;
+    text-align: center;
+    h1{
+        font-size: 18px;
+    }
+    i.iconfont {
+        font-size: 18px;
+        color: red;
+    }
+    header{
+        background: #e7e7e7;
+        line-height: 100px;
+        margin-bottom: 10px;
+    }
+}
+.banner {
+    background-repeat: no-repeat;
+}
