@@ -17,7 +17,7 @@
 + Wepack打包
 + 支持ES6/+/7
 
-> 该项目能支持客户端和服务端同构，利用SSR优化网页首屏打开时间及服务端加载页面主体结构，查看可移步[这里](https://github.com/walkstreet/react-koa2-ssr)
+> 不面向C端也可不适用同构框架，查看可移步[这里](https://github.com/walkstreet/react-koa2-webpack)
 
 ### 框架依赖简介
 + React v16.0.0
