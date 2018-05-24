@@ -2,7 +2,8 @@
   "name": "react-webpack-koa",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "server/base.js",
+  "email": "qingskybabe@qq.com",
   "scripts": {
     "start": "cross-env NODE_ENV=development node server/base.js",
     "clear": "rm -rf build && mkdir build",
