@@ -16,7 +16,7 @@ exports.layout = function (content, initState, staticStr) {
         <body>
             <div id="root">${content}</div>
             <script>window.__INITIAL_STATE__ =${JSON.stringify(initState)}</script>
-            ${config.env === 'development' ? '<script type="text/javascript" src="/public/main.bundle.js"></script>':staticStr}
+            ${staticStr}
         </body>
         </html>
     `;

@@ -9,6 +9,7 @@ import { ConnectedRouter, routerMiddleware } from 'react-router-redux';
 import { matchRoutes, renderRoutes } from 'react-router-config';
 import router from '../../client/router/router';
 import findSync from '../findFileName';
+import config from 'config';
 
 /**
  * 匹配当前请求url是否跟客户端路由一致 不一致则执行next 进行静态资源处理等
@@ -52,8 +53,13 @@ module.exports = async (ctx, next) => {
         console.log(html);
         let initState = store.getState();
         // 生产环境，取打包后的静态文件
-        let staticArr = findSync('./build/static/');
-        let staticStr = `<script type="text/javascript" src="/static/${staticArr[1]}"></script><script type="text/javascript" src="/static/${staticArr[0]}"></script`;
+        let staticStr;
+        if(config.env==='development') {
+            staticStr = '<script type="text/javascript" src="/public/main.bundle.js"></script>';
+        }else {
+            let staticArr = findSync('./build/static/');
+            staticStr = `<script type="text/javascript" src="/static/${staticArr[1]}"></script><script type="text/javascript" src="/static/${staticArr[0]}"></script`;
+        }
         const body = layout(html, initState, staticStr);
         ctx.body = body;
     }
